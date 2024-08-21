@@ -1,5 +1,7 @@
 import 'package:eshop_flutter/core/store.dart';
+import 'package:eshop_flutter/pages/cart_page.dart';
 import 'package:eshop_flutter/pages/home_page.dart';
+import 'package:eshop_flutter/utils/routes.dart';
 import 'package:eshop_flutter/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +26,11 @@ class MyApp extends StatelessWidget {
           theme: MyTheme.lightTheme(context),
           darkTheme: MyTheme.darkTheme(context),
           initialRoute: "/",
-          routes: {"/": (context) => const HomePage()},
+          routes: {
+            "/": (context) => const HomePage(),
+            MyRoutes.homeRoute: (context) => const HomePage(),
+            MyRoutes.cartRoute: (context) => const CartPage()
+          },
         );
       },
     );
