@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class ThemeProvider extends ChangeNotifier {
@@ -60,4 +61,42 @@ class ChangeThemeButton extends StatelessWidget {
       },
     );
   }
+}
+
+class MyTheme {
+  static ThemeData lightTheme(BuildContext context) => ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.poppins().fontFamily,
+        cardColor: Colors.white,
+        canvasColor: creamColor,
+        buttonTheme: ButtonThemeData(
+          buttonColor: darkBluishColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+        appBarTheme: const AppBarTheme(
+          color: Colors.white,
+          elevation: 0.0,
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
+      );
+  static ThemeData darkTheme(BuildContext context) => ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: GoogleFonts.poppins().fontFamily,
+        cardColor: const Color(0xff090B0F),
+        canvasColor: darkColor,
+        buttonTheme: ButtonThemeData(
+          buttonColor: lightBluishColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+        appBarTheme: const AppBarTheme(
+          color: Colors.white,
+          elevation: 0.0,
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
+      );
+  static Color creamColor = const Color(0xfff4f5fc);
+  static Color darkBluishColor = const Color(0xff1a191c);
+  static Color darkColor = const Color(0xff0F1014);
+
+  static Color lightBluishColor = const Color(0xFF6E40C9);
 }
